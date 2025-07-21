@@ -78,6 +78,8 @@ const SpecialityClinics = () => {
   ];
 
   return (
+   <>
+    <title>Aarsh ReproHealth</title>
     <div className="w-full bg-white">
       <div className="flex flex-col md:flex-row">
         {/* Left Side */}
@@ -91,14 +93,14 @@ const SpecialityClinics = () => {
               className="mb-6"
             />
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
-              Join Our Panel of Trusted Specialist Clinic Experts
+              Join Our Panel of Trusted Specialist Clinic
             </h1>
             <p className="text-gray-600 text-base">
               Fill out the form to connect with patients, grow your practice, and be part of Aarsh ReproHealth’s expert network.
             </p>
 
             <div>
-              <h3 className="text-lg font-semibold text-[#056873] uppercase mb-2">Why Join Our Clinic ?</h3>
+              <h3 className="text-lg font-semibold text-[#056873] uppercase mb-2">Why Join Us ?</h3>
               <ul className="space-y-3">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start text-sm text-gray-700">
@@ -120,7 +122,7 @@ const SpecialityClinics = () => {
             <h2 className="text-2xl font-semibold text-[#056873] text-center">
               Specialist Clinic Registration Form
             </h2>
-            <p className="text-[#fff] text-base">Fill in the form for our team to get in touch with you to assist you further</p>
+            <p className="text-[#fff] text-base"> Become a part of Aarsh ReproHealth's Experts' Network to connect with patients, grow your presence and make a difference in people's lives.</p>
 
             <div className="flex flex-col md:flex-row gap-4">
               <div className="w-full">
@@ -199,6 +201,7 @@ const SpecialityClinics = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
