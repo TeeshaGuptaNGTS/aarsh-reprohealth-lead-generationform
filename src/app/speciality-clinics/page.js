@@ -68,17 +68,17 @@ const SpecialityClinics = () => {
   };
 
   const features = [
-    "Get listed on India’s first reproductive trusted health platform",
+    "Get listed on India’s first Reproductive Health platform",
     "Accept online booking in one dashboard",
     "Book for your reproductive health procedures",
     "Increase revenue through virtual consultations",
     "Flexible doctor time slots for your convenience",
     "Manage patient records & consultations easily",
-    "Our team will get back to you to assist you.",
+    
   ];
 
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="w-full bg-white">
       <div className="flex flex-col md:flex-row">
         {/* Left Side */}
         <div className="w-full md:w-1/2 bg-gray-50  p-8 flex flex-col justify-center">
@@ -120,6 +120,7 @@ const SpecialityClinics = () => {
             <h2 className="text-2xl font-semibold text-[#056873] text-center">
               Specialist Clinic Registration Form
             </h2>
+            <p className="text-[#fff] text-base">Fill in the form for our team to get in touch with you to assist you further</p>
 
             <div className="flex flex-col md:flex-row gap-4">
               <div className="w-full">
