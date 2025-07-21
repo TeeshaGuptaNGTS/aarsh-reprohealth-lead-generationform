@@ -96,7 +96,8 @@ const SpecialityClinics = () => {
               Join Our Panel of Trusted Specialist Clinic
             </h1>
             <p className="text-gray-600 text-base">
-              Fill out the form to connect with patients, grow your practice, and be part of Aarsh ReproHealth’s expert network.
+              
+ Become a part of Aarsh ReproHealth's Experts' Network to connect with patients, grow your presence and make a difference in people's lives.
             </p>
 
             <div>
@@ -122,7 +123,11 @@ const SpecialityClinics = () => {
             <h2 className="text-2xl font-semibold text-[#056873] text-center">
               Specialist Clinic Registration Form
             </h2>
-            <p className="text-[#fff] text-base"> Become a part of Aarsh ReproHealth's Experts' Network to connect with patients, grow your presence and make a difference in people's lives.</p>
+            <p className="text-[#fff] text-base">
+              
+                            Fill out the form to connect with patients, grow your practice, and be part of Aarsh ReproHealth’s expert network.
+
+</p>
 
             <div className="flex flex-col md:flex-row gap-4">
               <div className="w-full">
