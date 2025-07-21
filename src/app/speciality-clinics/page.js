@@ -81,7 +81,7 @@ const SpecialityClinics = () => {
     <div className="w-full min-h-screen bg-white">
       <div className="flex flex-col md:flex-row">
         {/* Left Side */}
-        <div className="w-full md:w-1/2 bg-gray-50 p-8 flex flex-col justify-center">
+        <div className="w-full md:w-1/2 bg-gray-50  p-8 flex flex-col justify-center">
           <div className="max-w-2xl mx-auto space-y-6">
             <Image
               src={logo.logoImage}
@@ -98,11 +98,11 @@ const SpecialityClinics = () => {
             </p>
 
             <div>
-              <h3 className="text-lg font-semibold text-[#056873] uppercase mb-2">Why Join Our Clinic Network?</h3>
+              <h3 className="text-lg font-semibold text-[#056873] uppercase mb-2">Why Join Our Clinic ?</h3>
               <ul className="space-y-3">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start text-sm text-gray-700">
-                    <CiCircleCheck className="text-[#54efff] text-xl mr-2 mt-1" />
+                    <CiCircleCheck className="text-[var(--lightBlue)] text-xl mr-2 mt-1" />
                     {feature}
                   </li>
                 ))}
@@ -184,6 +184,7 @@ const SpecialityClinics = () => {
                 className="w-full px-4 py-3 rounded border border-gray-300 focus:ring-2 focus:ring-[#54efff] outline-none"
                 placeholder="Enter Mobile Number"
                 required
+                 maxLength={12}
               />
             </div>
 
