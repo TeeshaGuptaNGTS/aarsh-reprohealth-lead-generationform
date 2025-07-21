@@ -70,9 +70,9 @@ const SpecialityClinics = () => {
   const features = [
     "Get listed on India’s first Reproductive Health platform",
     "Accept online booking in one dashboard",
-    "Book for your reproductive health procedures",
+    "Receive bookings of procedures related to reproductive health.",
     "Increase revenue through virtual consultations",
-    "Flexible doctor time slots for your convenience",
+    "Assign flexible doctor time slots - online or in-person.",
     "Manage patient records & consultations easily",
     
   ];
