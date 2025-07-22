@@ -30,7 +30,7 @@ const SpecialityClinics = () => {
     }));
   };
 
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { firstName, lastName, clinicName, email, mobileNumber } = formData;
@@ -86,10 +86,12 @@ const SpecialityClinics = () => {
     if (!mobileNumber.trim()) {
       newErrors.mobileNumber = "Mobile number is required";
       isValid = false;
-    } else if (!/^\d{10,12}$/.test(mobileNumber)) {
-      newErrors.mobileNumber = "Mobile number must be between 10 and 12 digits";
+    } else if (!/^[6-9]\d{9}$/.test(mobileNumber)) {
+      newErrors.mobileNumber = "Enter a valid 10-digit Indian mobile number";
       isValid = false;
     }
+
+
 
     setErrors(newErrors);
 
@@ -264,17 +266,38 @@ const SpecialityClinics = () => {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Mobile Number <span className="text-red-500">*</span></label>
                 <input
-                  type="tel"
+                  type="text"
+                  inputMode="numeric"
+                  // pattern="[6-9]{1}[0-9]{9}"
+                  maxLength={10}
                   name="mobileNumber"
                   value={formData.mobileNumber}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded border border-gray-300 focus:ring-2 focus:ring-[#54efff] outline-none"
-                  placeholder="Enter Mobile Number"
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    // Allow only digits (0–9)
+                    if (/^\d*$/.test(value)) {
+                      setFormData({ ...formData, mobileNumber: value });
 
+                      if (!/^[6-9]\d{9}$/.test(formData?.mobileNumber)) {
+                        setErrors((prev) => ({
+                          ...prev,
+                          mobileNumber: "Please enter a valid 10-digit Indian mobile number",
+                        }));
+                        return;
+                      }
+
+                    }
+
+
+                  }}
+                  className={`w-full px-4 py-3 rounded border ${errors.mobileNumber ? 'border-red-500' : 'border-gray-300'
+                    } focus:ring-2 focus:ring-[#54efff] outline-none`}
+                  placeholder="Enter 10-digit Indian Mobile Number"
                 />
                 {errors.mobileNumber && (
                   <p className="text-sm text-red-500 mt-1">{errors.mobileNumber}</p>
                 )}
+
               </div>
 
               <button
@@ -295,45 +318,45 @@ export default SpecialityClinics;
 
 
 // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const { firstName, lastName, clinicName, email, mobileNumber } = formData;
+//   e.preventDefault();
+//   const { firstName, lastName, clinicName, email, mobileNumber } = formData;
 
-  //   if (!firstName || !lastName || !email || !mobileNumber || !clinicName) {
-  //     toast.error(`All fields are required {}`);
-  //     return;
-  //   }
+//   if (!firstName || !lastName || !email || !mobileNumber || !clinicName) {
+//     toast.error(`All fields are required {}`);
+//     return;
+//   }
 
-  //   const reqBody = {
-  //     name: `${firstName} ${lastName}`.trim(),
-  //     mobileNumber,
-  //     email,
-  //     clinicName,
-  //   };
+//   const reqBody = {
+//     name: `${firstName} ${lastName}`.trim(),
+//     mobileNumber,
+//     email,
+//     clinicName,
+//   };
 
-  //   try {
-  //     const response = await axios.post(
-  //       `https://doctor-arsh-qms4.onrender.com/api/auth/register`,
-  //       reqBody,
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         }
-  //       }
-  //     );
+//   try {
+//     const response = await axios.post(
+//       `https://doctor-arsh-qms4.onrender.com/api/auth/register`,
+//       reqBody,
+//       {
+//         headers: {
+//           "Content-Type": "application/json"
+//         }
+//       }
+//     );
 
-  //     if (response && response.status === 200) {
-  //       toast.success("Registration successful!");
-  //       setFormData({
-  //         firstName: '',
-  //         lastName: '',
-  //         clinicName: '',
-  //         email: '',
-  //         mobileNumber: ''
-  //       });
-  //     } else {
-  //       toast.error("Registration failed. Please try again.");
-  //     }
-  //   } catch (error) {
-  //     toast.error("Something went wrong. Please try again later.");
-  //   }
-  // };
+//     if (response && response.status === 200) {
+//       toast.success("Registration successful!");
+//       setFormData({
+//         firstName: '',
+//         lastName: '',
+//         clinicName: '',
+//         email: '',
+//         mobileNumber: ''
+//       });
+//     } else {
+//       toast.error("Registration failed. Please try again.");
+//     }
+//   } catch (error) {
+//     toast.error("Something went wrong. Please try again later.");
+//   }
+// };
