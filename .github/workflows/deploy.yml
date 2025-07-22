@@ -1,4 +1,4 @@
-name: React CI/CD Pipeline
+name: Next.js CI/CD Pipeline
 
 on:
   push:
@@ -37,11 +37,20 @@ jobs:
             npm test -- --watchAll=false
           fi
 
-      - name: Build React App
+      - name: Build Next.js App
         run: npm run build
+
+      - name: Export Static Site (optional for SSG)
+        if: ${{ exists('next.config.js') }}
+        run: |
+          if grep -q "output: 'export'" next.config.js; then
+            npm run export
+          fi
 
       - name: Upload Build Artifact (optional)
         uses: actions/upload-artifact@v3
         with:
-          name: react-build
-          path: build/
+          name: nextjs-build
+          path: |
+            .next/
+            out/
