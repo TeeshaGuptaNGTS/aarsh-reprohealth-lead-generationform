@@ -104,9 +104,11 @@ const SpecialityClinics = () => {
               <h3 className="text-lg font-semibold text-[#056873] uppercase mb-2">Why Join Us ?</h3>
               <ul className="space-y-3">
                 {features.map((feature, index) => (
-                  <li key={index} className="flex items-start text-sm text-gray-700">
-                    <CiCircleCheck className="text-[var(--lightBlue)] text-xl mr-2 mt-1" />
-                    {feature}
+                  <li key={index} className="flex items-center gap-3 text-sm text-gray-700">
+                    <div className='w-[5%]'>
+                      <CiCircleCheck className="text-[var(--lightBlue)] text-xl mr-2 mt-1" />
+                    </div>
+                    <div className='w-[90%]'>{feature}</div>
                   </li>
                 ))}
               </ul>
