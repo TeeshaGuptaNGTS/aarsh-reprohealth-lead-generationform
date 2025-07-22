@@ -41,7 +41,7 @@ const SpecialityClinics = () => {
 
     try {
       const response = await axios.post(
-        `https://6d7d5268aaf1.ngrok-free.app/api/auth/register`,
+        `https://doctor-arsh-qms4.onrender.com/api/auth/register`,
         reqBody,
         {
           headers: {
@@ -104,7 +104,7 @@ const SpecialityClinics = () => {
               <h3 className="text-lg font-semibold text-[#056873] uppercase mb-2">Why Join Us ?</h3>
               <ul className="space-y-3">
                 {features.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3 text-sm text-gray-700">
+                  <li key={index} className="flex items-start gap-3 text-sm text-gray-700">
                     <div className='w-[5%]'>
                       <CiCircleCheck className="text-[var(--lightBlue)] text-xl mr-2 mt-1" />
                     </div>
@@ -120,7 +120,7 @@ const SpecialityClinics = () => {
         <div className="w-full md:w-1/2 flex justify-center items-center bg-gradient-to-br from-[#54efff] to-[#056873] py-12">
           <form
             onSubmit={handleSubmit}
-            className="w-full max-w-lg rounded-lg space-y-6"
+            className="w-full max-w-lg sm:w-[80%] rounded-lg space-y-6"
           >
             <h2 className="text-2xl font-semibold text-[#056873] text-center">
               Specialist Clinic Registration Form
