@@ -77,7 +77,8 @@ const SpecialityClinics = () => {
     if (!email.trim()) {
       newErrors.email = "Email is required";
       isValid = false;
-    } else if (!emailRegex.test(email)) {
+    } 
+    else if (!emailRegex.test(email)) {
       newErrors.email = "Please enter a valid email address";
       isValid = false;
     }
@@ -86,17 +87,13 @@ const SpecialityClinics = () => {
     if (!mobileNumber.trim()) {
       newErrors.mobileNumber = "Mobile number is required";
       isValid = false;
-    } else if (!/^[6-9]\d{9}$/.test(mobileNumber)) {
+    } 
+    else if (!/^[6-9]\d{9}$/.test(mobileNumber)) {
       newErrors.mobileNumber = "Enter a valid 10-digit Indian mobile number";
       isValid = false;
     }
-
-
-
     setErrors(newErrors);
-
     if (!isValid) return;
-
 
     const reqBody = {
       name: `${firstName} ${lastName}`.trim(),
